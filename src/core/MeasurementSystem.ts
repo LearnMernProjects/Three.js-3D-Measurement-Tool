@@ -3,7 +3,6 @@ import System from './baseClasses/System';
 
 export class MeasurementSystem extends System {
   private scene: THREE.Scene | null = null;
-  private camera: THREE.Camera | null = null;
 
   private isActive = false;
   private isMeasuring = false;
@@ -40,7 +39,7 @@ public isMeasurementActive(): boolean {
   */
   init(dependencies: { scene: THREE.Scene; camera: THREE.Camera }) {
     this.scene = dependencies.scene;
-    this.camera = dependencies.camera;
+    // camera parameter is not currently used but kept for future extensibility
 
     this.previewMaterial = new THREE.LineDashedMaterial({
       color: 0x94a3b8,
